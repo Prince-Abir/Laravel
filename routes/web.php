@@ -67,7 +67,7 @@ Route::get('/home',function(){
 // });
 
 
-Route::get('/about',[ControllerCheck::class,'index']);
+// Route::get('/about',[ControllerCheck::class,'index']);
 
 Route::get('/contact',SingleActionController::class);
 

@@ -24,45 +24,13 @@
         </pre> --}}
 
         <div class="container">
-            <div class="form-group" style="margin:10px">
-                <label for="name">Name</label>
-                <input type="text" id="name" name="name" value="{{old('name')}}">
-                <span class="text-danger">
-                    @error('name')
-                        {{$message}}
-                    @enderror
-                </span>
-            </div>
+          
+        
+            <x-input label="Enter Your Name: " type="text"  name="name"/>
+            <x-input label="Enter Your Email: " type="email"  name="email"/>
+            <x-input label="Enter Your Password: " type="password"  name="password"/>
+            <x-input label="Confirm Password: " type="password"  name="confirm_password"/>
 
-            <div class="form-group" style="margin:10px">
-                <label for="email">Email</label>
-                <input type="email" id="email" name="email" value="{{old('email')}}">
-                <span class="text-danger">
-                    @error('email')
-                        {{$message}}
-                    @enderror
-                </span>
-            </div>
-
-            <div class="form-group" style="margin:10px">
-                <label for="password">Password</label>
-                <input type="password" id="password" name="password">
-                <span class="text-danger">
-                    @error('password')
-                        {{$message}}
-                    @enderror
-                </span>
-            </div>
-
-            <div class="form-group" style="margin:10px">
-                <label for="confirm_password">Confirm Password</label>
-                <input type="password" id="confirm_password" name="confirm_password">
-                <span class="text-danger">
-                    @error('confirm_password')
-                        {{$message}}
-                    @enderror
-                </span>
-            </div>
 
             <button type="submit" class="btn btn-primary">Submit</button>
         </div>
