@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controller\ResourceController;
 use App\Http\Controllers\Registration;
 use App\Http\Controllers\RsController;
+use App\Models\Clients;
 
 /*
 |--------------------------------------------------------------------------
@@ -76,3 +77,9 @@ Route::resource('photo', RsController::class);
 
 Route::get('/register',[Registration::class,'index']);
 Route::post('/register',[Registration::class,'register']);
+
+
+Route::get('/client',function(){
+
+    $customers = Clients::all();
+});

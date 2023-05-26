@@ -29,7 +29,7 @@
             <x-input label="Enter Your Name: " type="text"  name="name"/>
             <x-input label="Enter Your Email: " type="email"  name="email"/>
             <x-input label="Enter Your Password: " type="password"  name="password"/>
-            <x-input label="Confirm Password: " type="password"  name="confirm_password"/>
+            <x-input label="Confirm Password: " type="password"  name="pass"/>
 
 
             <button type="submit" class="btn btn-primary">Submit</button>
