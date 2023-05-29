@@ -6,7 +6,7 @@ use App\Http\Controllers\PostController;
 use App\Http\Controllers\SingleActionController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controller\ResourceController;
-use App\Http\Controllers\Registration;
+use App\Http\Controllers\RegistrationController;
 use App\Http\Controllers\RsController;
 use App\Models\Clients;
 
@@ -75,11 +75,15 @@ Route::get('/contact',SingleActionController::class);
 Route::resource('photo', RsController::class);
 
 
-Route::get('/register',[Registration::class,'index']);
-Route::post('/register',[Registration::class,'register']);
+Route::get('/register',[RegistrationController::class,'index']);
+Route::post('/register',[RegistrationController::class,'register']);
 
 
 Route::get('/client',function(){
 
     $customers = Clients::all();
 });
+
+Route::get('/register/view',[RegistrationController::class,'viewClient']);
+
+Route::get('/client/delete/{id}',[RegistrationController::class,'deleteItem'])->name('client.delete');

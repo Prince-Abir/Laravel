@@ -17,10 +17,9 @@ return new class extends Migration
             $table->string('email',100);
             $table->string('password');
             $table->enum('gender',['Male','Female','Other'])->nullable();
-            $table->string('name',50)->change();
-            $table->text('address')->default('empty');
-            $table->date('join_date');
-            $table->integer('points')->default('0');
+            $table->text('address')->default('empty')->nullable();
+            $table->date('join_date')->nullable();
+            $table->integer('points')->default('0')->nullable();
             $table->timestamps();
         });
     }

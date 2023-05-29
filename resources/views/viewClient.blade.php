@@ -1,17 +1,20 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Form</title>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
-        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <!-- Bootstrap CSS v5.2.1 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+
 </head>
 
 <body>
+
 
     <nav class="navbar navbar-expand-sm navbar-light bg-light">
         <div class="container">
@@ -41,29 +44,39 @@
     </div>
     </nav>
 
-    <form action="{{ url('/') }}/register" method="post">
+    <div class="container">
 
-        @csrf
+        <div class="table">
+            <table class="table">
 
-        {{-- <pre>
-            @php
-                print_r($errors->all());
-            @endphp
-        </pre> --}}
+                <thead>
 
-        <div class="container">
-          
-        
-            <x-input label="Enter Your Name: " type="text"  name="name"/>
-            <x-input label="Enter Your Email: " type="email"  name="email"/>
-            <x-input label="Enter Your Password: " type="password"  name="password"/>
-            <x-input label="Confirm Password: " type="password"  name="confirm_password"/>
+                    <tr>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Password</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach ($clients as $client)
+                        <tr>
+
+                            <td>{{ $client->name }}</td>
+                            <td>{{ $client->email }}</td>
+                            <td>{{ $client->password }}</td>
+                            <td><a href="{{route('client.delete', $client->customer_id) }}"><button class="btn btn-danger">Delete</button></a></td>
+                            <td><button class="btn btn-primary">Update</button></td>
+                        </tr>
+                    @endforeach
 
 
-            <button type="submit" class="btn btn-primary">Submit</button>
+                </tbody>
+
+            </table>
         </div>
 
-    </form>
+
+    </div>
 
 </body>
 
